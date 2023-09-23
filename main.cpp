@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <iostream>
+#include "World.h"
 
 using namespace std;
 
@@ -22,7 +23,10 @@ void printEntrance() {
 }
 
 int main() {
-	printEntrance();
 
+	World world;
+
+	printEntrance();
+	cout << "\nWelcome to the NASA facilities" << endl;
 }
 
