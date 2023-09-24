@@ -27,6 +27,8 @@ World::World() {
 	entities.push_back(map);
 	entities.push_back(player);
 
+	gameState = GameState::RUNNING;
+
 }
 
 World::~World() {
@@ -58,3 +60,12 @@ Entity* World::FindEntityByType(EntityType type)
 
 	return nullptr;
 }
+
+GameState World::GetGameState() {
+	return gameState;
+}
+
+void World::HandleUserInput(vector<string> commands) {
+	//TODO: Parse commands
+}
+
