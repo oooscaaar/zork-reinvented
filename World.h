@@ -2,7 +2,6 @@
 
 #include <vector>
 #include "Entity.h"
-#include "Room.h"
 
 using namespace std;
 
@@ -12,6 +11,6 @@ public:
 	World();
 	~World();
 private:
-	vector<Room*> entities;
+	vector<Entity*> entities;
 };
 
