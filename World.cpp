@@ -3,6 +3,8 @@
 #include "Item.h"
 #include "Player.h"
 
+using namespace std;
+
 World::World() {
 
 	// Rooms
@@ -16,8 +18,43 @@ World::World() {
 	Item* map = new Item("Map", "Map of the building", hall);
 
 	Player* player = new Player("John Doe", "You're a 47 years old Aerospace engineer", facilities_entrance);
+
+	entities.push_back(facilities_entrance);
+	entities.push_back(hall);
+	entities.push_back(hubble_telescope_room);
+	entities.push_back(quantum_computer_room);
+	entities.push_back(players_office);
+	entities.push_back(map);
+	entities.push_back(player);
+
 }
 
 World::~World() {
 	
+}
+
+Entity* World::FindEntityByName(string name)
+{
+	for (Entity* e : entities)
+	{
+
+		if (e->name == name) {
+			return e;
+		}
+	}
+
+	return nullptr;
+}
+
+Entity* World::FindEntityByType(EntityType type)
+{
+	for (Entity* e : entities)
+	{
+
+		if (e->type == type) {
+			return e;
+		}
+	}
+
+	return nullptr;
 }

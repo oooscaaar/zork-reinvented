@@ -27,18 +27,22 @@ void printEntrance() {
 int main() {
 
 	World world;
+	Player* player = (Player*)world.FindEntityByType(EntityType::PLAYER);
 
 	printEntrance();
 	cout << "\nWelcome to the NASA facilities, eager aerospace engineer.\nYou work here.\nThere is a soldier guarding the entrance.\nThe soldier asks for your name: " << endl;
+	
 	string playerName;
 
 	while (playerName.empty()) {
 		cin >> playerName;
 	}
 
-	cout << "Ok " << playerName << ", to let you pass, I need to verify your NASA unique ultra secret credential." << endl;
+	player->setName(playerName);
 
+	cout << "Ok " << player->name << ", to let you pass, first I need to verify your NASA unique ultra secret credential." << endl;
 
+	return 0;
 
 }
 
