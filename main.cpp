@@ -7,7 +7,8 @@
 
 using namespace std;
 
-//TODO: Extract all ASCII art and functions to its own class
+//TODO: [REFACTOR] Extract all ASCII art and functions to its own class
+
 void printEntrance() {
 	cout << "* * * * * * * * * * * * * * * * * * * * * * * * * * * * *" << endl;
 	cout << "*                                                       *" << endl;
@@ -38,7 +39,7 @@ int main() {
 	string playerName;
 
 	while (playerName.empty()) {
-		cin >> playerName;
+		getline(cin >> ws, playerName);
 	}
 
 	player->setName(playerName);
