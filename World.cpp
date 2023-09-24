@@ -1,6 +1,7 @@
 #include "World.h"
 #include "Room.h"
 #include "Item.h"
+#include "Player.h"
 
 World::World() {
 
@@ -11,8 +12,10 @@ World::World() {
 	Room* quantum_computer_room = new Room("Quantum Computer Room", "Let's crack some cyphered secrets");
 	Room* players_office = new Room("Your Office", "This is your humble office. It's equiped with a COMPUTER, a desk and a huge american FLAG on the wall.");
 
-	//
+	// Items
 	Item* map = new Item("Map", "Map of the building", hall);
+
+	Player* player = new Player("John Doe", "You're a 47 years old Aerospace engineer", facilities_entrance);
 }
 
 World::~World() {

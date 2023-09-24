@@ -1,6 +1,8 @@
 #include <cstdlib>
 #include <iostream>
 #include "World.h"
+#include "Player.h"
+
 
 using namespace std;
 
@@ -27,6 +29,16 @@ int main() {
 	World world;
 
 	printEntrance();
-	cout << "\nWelcome to the NASA facilities" << endl;
+	cout << "\nWelcome to the NASA facilities, eager aerospace engineer.\nYou work here.\nThere is a soldier guarding the entrance.\nThe soldier asks for your name: " << endl;
+	string playerName;
+
+	while (playerName.empty()) {
+		cin >> playerName;
+	}
+
+	cout << "Ok " << playerName << ", to let you pass, I need to verify your NASA unique ultra secret credential." << endl;
+
+
+
 }
 

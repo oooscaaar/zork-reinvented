@@ -4,5 +4,9 @@
 class Player :
     public Creature
 {
+public: 
+    Player(string name, string description, Room* location) : Creature(EntityType::PLAYER, name, description, location) {
+    };
+
 };
 

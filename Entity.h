@@ -5,10 +5,11 @@
 
 using namespace std;
 
-enum EntityType {
+enum class EntityType {
 	ROOM,
 	EXIT,
 	ITEM,
+	CREATURE,
 	PLAYER,
 	NPC
 };
@@ -16,12 +17,12 @@ enum EntityType {
 class Entity 
 {
 public:
-	Entity(EntityType type, const char* name, const char* description);
+	Entity(EntityType type, string name, string description);
 	~Entity();
 
-private:
+	Entity* parent;
+	list<Entity*> container;
 	EntityType type;
 	string name;
 	string description;
-	list<Entity*> container;
 };

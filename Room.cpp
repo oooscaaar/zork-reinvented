@@ -1,3 +1,3 @@
 #include "Room.h"
 
-Room::Room(const char* name, const char* description) : Entity(EntityType::ROOM, name, description) {}
+Room::Room(string name, string description) : Entity(EntityType::ROOM, name, description) {}

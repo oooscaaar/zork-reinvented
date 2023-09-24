@@ -7,7 +7,12 @@ class Creature :
 {
 
 public:
-    Room* location;
+    Creature(EntityType type, string name, string description, Room* location = nullptr): Entity(type, name, description) {
+        this->location = location;
+    };
 
+    Room* location;
 };
+
+
 

@@ -1,11 +1,11 @@
 #include "Entity.h"
 
 
-Entity::Entity(EntityType type, const char* name, const char* description) {
+Entity::Entity(EntityType type, string name, string description) {
+	this->type = type;
 	this->name = name;
 	this->description = description;
-	this->type = type;
-
+	this->parent = nullptr;
 }
 
 Entity::~Entity() {}
