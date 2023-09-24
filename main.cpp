@@ -42,8 +42,10 @@ int main() {
 		getline(cin >> ws, playerName);
 	}
 
-	player->setName(playerName);
-	cout << "Ok " << player->name << ", to let you pass, first I need to verify your NASA unique ultra secret credential." << endl;
+	player->SetName(playerName);
+
+	cout << "\nSOLDIER: Ok " << player->name << ", to let you pass, first I need to verify your NASA unique ultra secret credential." << endl;
+	cout << "[hint] Type HELP to get a list of available commands.\n";
 
 	// Handle user input
 	string input;
