@@ -10,11 +10,14 @@ Entity::Entity(EntityType type, string name, string description) {
 
 Entity::~Entity() {}
 
+
+// TODO: Change argument type to string and handle find entity withing the class, not within the whole world.
 void Entity::Add(Entity* entity) {
 	entity->parent = this;
 	container.push_back(entity);
 }
 
+// TODO: Change argument type to string and handle find entity withing the class, not within the whole world.
 void Entity::Remove(Entity* entity) {
 	// Early return if entity is not owned
 	if (entity->parent != this) {
