@@ -11,10 +11,20 @@ Entity::Entity(EntityType type, string name, string description) {
 Entity::~Entity() {}
 
 void Entity::Add(Entity* entity) {
+	entity->parent = this;
 	container.push_back(entity);
 }
 
 void Entity::Remove(Entity* entity) {
+	// Early return if entity is not owned
+	if (entity->parent != this) {
+		return;
+	}
+	// Set parent one level up if it exists
+	if (entity->parent->parent != NULL) {
+		entity->parent = entity->parent->parent;
+		entity->parent->parent->container.push_back(entity);
+	}
 	container.remove(entity);
 }
 

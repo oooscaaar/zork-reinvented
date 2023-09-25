@@ -16,5 +16,8 @@ public:
     };
 
     void DisplayInventory();
+
+    void Go(string direction);
+
 };
 

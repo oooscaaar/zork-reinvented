@@ -5,8 +5,8 @@ class Item :
     public Entity
 {
 public:
-    Item(const char* name, const char* description, Entity* parent);
-    void use();
+    Item(const char* name, const char* description, Entity* parent = NULL);
+    void Use();
 
 };
 

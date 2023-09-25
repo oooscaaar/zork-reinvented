@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Utils.h"
 
 void Player::DisplayInventory() {
 	cout << "\n----------------------- INVENTORY -----------------------\n" << endl;
@@ -15,4 +16,11 @@ void Player::DisplayInventory() {
 		}
 	}
 	cout << "\n---------------------------------------------------------\n" << endl;
-	}
+
+}
+
+void Player::Go(string direction) {
+	// Check if there's a door pointing in that direction
+	// Check if the door is locked
+	// Go
+}

@@ -9,6 +9,7 @@ class Utils
 {
 public:
 	static vector<string> TrimUserInput(string commands);
+	static string ToLower(string input);
 
 };
 
