@@ -10,7 +10,7 @@ TODO:
 [ ] Add locks to doors
 [ ] Handle game state
 [ ] Huge refactor
-[ ] 
+[ ] Add drop method to player (Don't use Remove Entity)
 
 \
 \

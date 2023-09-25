@@ -3,6 +3,7 @@
 #include "World.h"
 #include "Player.h"
 #include "Utils.h"
+#include "UI.h"
 
 
 using namespace std;
@@ -33,7 +34,7 @@ int main() {
 	World world;
 	Player* player = (Player*)world.FindEntityByType(EntityType::PLAYER);
 
-	printEntrance();
+	UI::DisplayIntro();
 	cout << "\nWelcome to the NASA facilities, eager aerospace engineer.\nYou work here.\nThere is a soldier guarding the entrance.\nThe soldier asks for your name: " << endl;
 	
 	string playerName;

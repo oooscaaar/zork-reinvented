@@ -21,6 +21,8 @@ public:
 	Entity* FindEntityByType(EntityType type);
 	GameState GetGameState();
 	void HandleUserInput(vector<string>);
+	void DisplayHelp();
+	void DisplayAbout();
 
 private:
 	vector<Entity*> entities;

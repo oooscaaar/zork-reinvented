@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Exit.h"
 #include "Utils.h"
+#include "UI.h"
 #include <iostream>
 
 using namespace std;
@@ -88,10 +89,10 @@ void World::HandleUserInput(vector<string> commands) {
 	case 1:
 	{
 		if (commands[0] == "help") {
-			DisplayHelp();
+			UI::DisplayHelp();
 		}
 		else if (commands[0] == "about") {
-			DisplayAbout();
+			UI::DisplayAbout();
 		}
 		else if (commands[0] == "inventory") {
 			player->DisplayInventory();
@@ -106,7 +107,13 @@ void World::HandleUserInput(vector<string> commands) {
 	{
 		if (commands[0] == "inspect") { break; }
 		if (commands[0] == "use") { break; }
-		if (commands[0] == "take") { break; }
+		if (commands[0] == "take") {
+			Entity* entityToTake = FindEntityByName(commands[1]);
+			if (entityToTake->GetParent() == player->location) {
+				player->Add(entityToTake);
+			}
+			break;
+		}
 		if (commands[0] == "go") { player->Go(commands[1]); break; }
 		if (commands[0] == "drop") {
 			Entity* entityToDrop = FindEntityByName(commands[1]);
@@ -140,27 +147,3 @@ void World::HandleUserInput(vector<string> commands) {
 	}
 
 }
-
-
-void World::DisplayHelp() {
-	cout << "\n--- AVAILABLE COMMANDS ---\nINVENTORY\nLOOK\nINSPECT [OBJECT]\nUSE [OBJECT]\nTAKE [OBJECT]\nDROP [OBJECT]\nGO [DIRECTION]\nI NEED A HERO\nABOUT\nHELP\n-------------------------" << endl;
-}
-
-void World::DisplayAbout() {
-	cout << "\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n";
-	cout << "* @author: Oscar Mellado                                *\n";
-	cout << "* @date: September 2023                                 *\n";
-	cout << "* @context: Advanced programming for AAA videogames     *\n";
-	cout << "* @see: https://github.com/oooscaaar                    *\n";
-	cout << "*                                                       *\n";
-	cout << "*                                                       *\n";
-	cout << "*                    /\"\"\\      ,                        *\n";
-	cout << "*                   <>^  L____/|                        *\n";
-	cout << "*                    `) /`   , /                        *\n";
-	cout << "*                     \\ `---' /                         *\n";
-	cout << "*                      `'\";\\) `                         *\n";
-	cout << "*                        _/_Y                           *  \n";
-	cout << "*                                               1557798 *\n";
-	cout << "* * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n\n";
-}
-
