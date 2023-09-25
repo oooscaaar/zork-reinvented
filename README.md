@@ -3,6 +3,15 @@
 Text-based Adventure Game.\
 Zork clone in C++.\
 Technical Assessment for [UPC Master's Degree of Continuing Education in Advanced Programming for AAA Video Games](https://www.talent.upc.edu/ing/estudis/formacio/curs/201200/master-degree-advanced-programming-aaa-video-games/)
+TODO:
+[ ] Player location and movement
+[ ] Use items
+[ ] Add exits to map
+[ ] Add locks to doors
+[ ] Handle game state
+[ ] Huge refactor
+[ ] 
+
 \
 \
 Author: Óscar M.\
