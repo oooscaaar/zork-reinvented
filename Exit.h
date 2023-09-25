@@ -2,16 +2,25 @@
 #include "Entity.h"
 #include "Room.h"
 
-typedef enum DirectionType {
+enum class DirectionType {
 	NORTH,
 	EAST,
 	SOUTH,
 	WEST
 };
 
+
 class Exit :
 	public Entity
 {
+public:
+	Exit(string name, string description, DirectionType direction, Room* source, Room* destination) : Entity(EntityType::EXIT, name, description) {
+		this->direction = direction;
+		this->source = source;
+		this->destination = destination;
+	}
+
+
 private:
 	DirectionType direction;
 	Room* source;
