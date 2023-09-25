@@ -14,6 +14,7 @@ public:
     void SetName(string name) {
         this->name = name;
     };
+
     void DisplayInventory();
 };
 
