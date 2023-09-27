@@ -8,5 +8,6 @@ class AsciiArt
 {
 public:
 	static vector<string> facilities;
+	static vector<string> map;
 };
 

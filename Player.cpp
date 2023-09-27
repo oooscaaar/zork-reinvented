@@ -30,7 +30,6 @@ void Player::Go(string& direction) {
 		if (e->GetDirection() == direction) {
 			//TODO: Add locked door mechanic (CHeck if door is locked, and If so, check player inventory and output a message accordingly.
 			this->location = e->GetDestination();
-			UI::DisplayAscii(this->location->asciiArt);
 		}
 	}
 }
