@@ -31,6 +31,10 @@ void Entity::Remove(Entity* entity) {
 	container.remove(entity);
 }
 
+list<Entity*> Entity::GetChildren() const {
+	return container;
+}
+
 Entity* Entity::GetParent() const {
 	return parent;
 }

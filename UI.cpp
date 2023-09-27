@@ -1,7 +1,5 @@
 #include "UI.h"
-#include <iostream>
 
-using namespace std;
 
 void UI::DisplayIntro() {
 	cout << "* * * * * * * * * * * * * * * * * * * * * * * * * * * * *" << endl;
@@ -42,5 +40,12 @@ void UI::DisplayAbout() {
 	cout << "*                                               1557798 *\n";
 	cout << "* * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n\n";
 }
+
+void UI::DisplayAscii(vector<string> asciiArt) {
+	for (string line : asciiArt) {
+		cout << line << endl;
+	}
+}
+
 
 

@@ -1,12 +1,19 @@
 #include "Room.h"
+#include "UI.h"
 
-Room::Room(string name, string description) : Entity(EntityType::ROOM, name, description) {
+Room::Room(string name, string description, vector<string> asciiArt) : Entity(EntityType::ROOM, name, description) {
 	this->name = name;
 	this->description = description;
+	this-> asciiArt = asciiArt;
 }
 
 vector<Exit*> Room::GetExits() {
-	//TODO: Implement method
-	return (vector < Exit*>)0;
+	vector<Exit*> exitsInRoom;
+	for (Entity* e : container) {
+		if (e->type == EntityType::EXIT) {
+			exitsInRoom.push_back((Exit*)e);
+		}
+	}
+	return exitsInRoom;
 };
 

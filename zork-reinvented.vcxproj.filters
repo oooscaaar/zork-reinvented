@@ -12,6 +12,7 @@
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="UI.cpp" />
+    <ClCompile Include="AsciiArt.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -27,5 +28,6 @@
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="UI.h" />
+    <ClInclude Include="AsciiArt.h" />
   </ItemGroup>
 </Project>

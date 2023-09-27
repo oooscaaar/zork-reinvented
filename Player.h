@@ -1,6 +1,7 @@
 #pragma once
 #include "Creature.h"
 #include "Exit.h"
+#include "UI.h"
 #include<iostream>
 
 using namespace std;
@@ -17,6 +18,8 @@ public:
     };
 
     void DisplayInventory();
+
+    string getLocationName();
 
     void Go(string& direction);
 

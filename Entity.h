@@ -2,6 +2,7 @@
 
 #include <string>
 #include <list>
+#include <vector>
 
 using namespace std;
 
@@ -21,6 +22,7 @@ public:
 	~Entity();
 
 	Entity* GetParent() const;
+	list<Entity*> GetChildren() const;
 	void SetParent(Entity* parent);
 	void Add(Entity* entity);
 	void Remove(Entity* entity);

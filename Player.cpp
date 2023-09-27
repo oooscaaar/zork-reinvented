@@ -20,15 +20,17 @@ void Player::DisplayInventory() {
 
 }
 
+string Player::getLocationName() {
+	return location->name;
+}
+
 void Player::Go(string& direction) {
-	// Check if there's a door pointing in that direction
 	vector<Exit*> exitsInRoom = location->GetExits();
 	for (Exit* e : exitsInRoom) {
 		if (e->GetDirection() == direction) {
+			//TODO: Add locked door mechanic (CHeck if door is locked, and If so, check player inventory and output a message accordingly.
 			this->location = e->GetDestination();
-
+			UI::DisplayAscii(this->location->asciiArt);
 		}
-		// Check if the door is locked
-		// Go
 	}
 }
