@@ -7,7 +7,9 @@ using namespace std;
 class AsciiArt
 {
 public:
-	static vector<string> facilities;
+	static vector<string> facilitiesEntrance;
+	static vector<string> playersOffice;
+	static vector<string> hubbleTelescopeRoom;
 	static vector<string> map;
 };
 

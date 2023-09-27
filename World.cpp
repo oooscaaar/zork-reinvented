@@ -16,11 +16,11 @@ World::World() {
 
 
 	// Rooms
-	Room* facilitiesEntrance = new Room("NASA Facilities entrance", "You are talking to a guard. He asks for an ID card in order to let you pass the security check and access to the NASA building. \n\nType HELP to get a list of available commands.", AsciiArt::facilities);
-	Room* hall = new Room("Main Hall", "The guard lets you access the building. You are in the main hall. It's quite a big building. Luckily you took a MAP so you can get to your office.", AsciiArt::facilities);
-	Room* hubbleTelescopeRoom = new Room("Hubble Telescope Room", "Finally, you mange to access the room.You see a huge TELESCOPE in the middle of the chamber.You are full of confidence, you can save the world.", AsciiArt::facilities);
-	Room* quantumComputerRoom = new Room("Quantum Computer Room", "Let's crack some cyphered secrets", AsciiArt::facilities);
-	Room* playersOffice = new Room("Your Office", "This is your humble office. It's equiped with a COMPUTER, a desk and a huge american FLAG on the wall.", AsciiArt::facilities);
+	Room* facilitiesEntrance = new Room("NASA Facilities entrance", "You are talking to a guard. He asks for an ID card in order to let you pass the security check and access to the NASA building. \n\nType HELP to get a list of available commands.", AsciiArt::facilitiesEntrance);
+	Room* hall = new Room("Main Hall", "The guard lets you access the building. You are in the main hall. It's quite a big building. Luckily you took a MAP so you can get to your office.", AsciiArt::map);
+	Room* hubbleTelescopeRoom = new Room("Hubble Telescope Room", "Finally, you mange to access the room.You see a huge TELESCOPE in the middle of the chamber.You are full of confidence, you can save the world.", AsciiArt::hubbleTelescopeRoom);
+	Room* quantumComputerRoom = new Room("Quantum Computer Room", "Let's crack some cyphered secrets", AsciiArt::facilitiesEntrance);
+	Room* playersOffice = new Room("Your Office", "This is your humble office. It's equiped with a COMPUTER, a desk and a huge american FLAG on the wall.", AsciiArt::playersOffice);
 
 	// Exits
 	Exit* entranceToHall = new Exit("Building door", "Access to the main hall.", DirectionType::NORTH, facilitiesEntrance, hall);

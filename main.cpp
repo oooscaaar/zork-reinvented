@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Utils.h"
 #include "UI.h"
+#include "AsciiArt.h"
 
 
 using namespace std;
@@ -34,7 +35,7 @@ int main() {
 	World world;
 	Player* player = (Player*)world.FindEntityByType(EntityType::PLAYER);
 
-	UI::DisplayIntro();
+	UI::DisplayAscii(AsciiArt::hubbleTelescopeRoom);
 	cout << "\nWelcome to the NASA facilities, eager aerospace engineer.\nYou work here.\nThere is a soldier guarding the entrance.\nThe soldier asks for your name: " << endl;
 	
 	string playerName;
