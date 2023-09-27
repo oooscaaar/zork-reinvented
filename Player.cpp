@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Utils.h"
+#include <vector>
 
 void Player::DisplayInventory() {
 	cout << "\n----------------------- INVENTORY -----------------------\n" << endl;
@@ -19,8 +20,15 @@ void Player::DisplayInventory() {
 
 }
 
-void Player::Go(string direction) {
+void Player::Go(string& direction) {
 	// Check if there's a door pointing in that direction
-	// Check if the door is locked
-	// Go
+	vector<Exit*> exitsInRoom = location->GetExits();
+	for (Exit* e : exitsInRoom) {
+		if (e->GetDirection() == direction) {
+			this->location = e->GetDestination();
+
+		}
+		// Check if the door is locked
+		// Go
+	}
 }

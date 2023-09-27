@@ -20,6 +20,8 @@ public:
 		this->destination = destination;
 	}
 
+	string GetDirection();
+	Room* GetDestination();
 
 private:
 	DirectionType direction;

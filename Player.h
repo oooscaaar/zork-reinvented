@@ -1,5 +1,6 @@
 #pragma once
 #include "Creature.h"
+#include "Exit.h"
 #include<iostream>
 
 using namespace std;
@@ -17,7 +18,7 @@ public:
 
     void DisplayInventory();
 
-    void Go(string direction);
+    void Go(string& direction);
 
 };
 
