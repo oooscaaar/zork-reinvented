@@ -34,11 +34,11 @@ World::World() {
 
 
 	// Items
-	Item* map = new Item("map", "Map of the building");
-	Item* idCard = new Item("id", "Even if you look like a terrorist on that photo, this is your NFC ID card.");
-	Item* telescope = new Item("telescope", "The Hubble telescope is amazing. Now you know why it was several decades in the making.");
-	Item* laptop = new Item("laptop", "That is your computer. Maybe you should start the work day checking your email inbox...");
-	Item* flag = new Item("flag", "That's your huge and beloved American Flag on the wall.");
+	Item* map = new Item("map", "Map of the building", AsciiArt::map);
+	Item* idCard = new Item("id", "Even if you look like a terrorist on that photo, this is your NFC ID card.", AsciiArt::map);
+	Item* telescope = new Item("telescope", "The Hubble telescope is amazing. Now you know why it was several decades in the making.", AsciiArt::map);
+	Item* laptop = new Item("laptop", "That is your computer. Maybe you should start the work day checking your email inbox...", AsciiArt::laptop);
+	Item* flag = new Item("flag", "That's your huge and beloved American Flag on the wall.", AsciiArt::flag);
 
 	// Player
 	player = new Player("John Doe", "You're a 47 years old Aerospace engineer", facilitiesEntrance);

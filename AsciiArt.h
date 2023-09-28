@@ -12,5 +12,7 @@ public:
 	static vector<string> hubbleTelescopeRoom;
 	static vector<string> hall;
 	static vector<string> map;
+	static vector<string> flag;
+	static vector<string> laptop;
 };
 

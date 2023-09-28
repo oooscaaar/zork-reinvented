@@ -5,8 +5,9 @@ class Item :
     public Entity
 {
 public:
-    Item(const char* name, const char* description, Entity* parent = NULL);
-    void Use();
+    Item(const char* name, const char* description, vector<string> asciiArt, Entity* parent = NULL);
+
+    vector<string> asciiArt;
 
 };
 

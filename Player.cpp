@@ -109,6 +109,10 @@ void Player::Inspect(string entityName) {
 	}
 
 	if (entityToInspect != nullptr) {
+		if (entityToInspect->type == EntityType::ITEM) {
+			Item* item = (Item*)entityToInspect;
+			UI::DisplayAscii(item->asciiArt);
+		}
 		cout << Utils::ToUpper(entityToInspect->name) << ": " << entityToInspect->description << endl;
 	}
 	else {
@@ -132,6 +136,9 @@ void Player::Use(string itemName) {
 					}
 				}
 			}
+		}
+		else if (itemToUse->name == "laptop") {
+			
 		}
 	}
 	else {
