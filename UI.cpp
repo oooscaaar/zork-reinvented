@@ -15,6 +15,13 @@ void UI::DisplayAbout() {
 	DisplayAscii(AsciiArt::about);
 }
 
+void UI::DisplayEnd() {
+	DisplayAscii(AsciiArt::finalScene);
+	//TODO: Change message
+	cout << "Welcome to the NASA facilities, eager aerospace engineer.\nYou work here.\nThere is a soldier guarding the entrance.\n\n---------------------------------------------------------" << endl;
+	cout << "It's been an amazing adventure. Thanks for playing!";
+}
+
 void UI::DisplayAscii(vector<string> asciiArt) {
 	cout << "\n";
 	for (string line : asciiArt) {

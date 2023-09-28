@@ -36,7 +36,10 @@ void Player::Go(string direction) {
 					}
 					if (code == "1234") {
 						e->UnLock();
-						cout << "Nice, you've UNLOCKED the door!" << endl;
+						this->location = e->GetDestination();
+						UI::DisplayAscii(location->asciiArt);
+						cout << e->GetOnCrossedMessage() << endl;
+						cout << "\n---------------------------------------------------------" << endl;
 					}
 					else {
 						cout << "Nice try, but... INCORRECT CODE!\n---------------------------------------------------------" << endl;
@@ -45,8 +48,8 @@ void Player::Go(string direction) {
 				else if (location->name == "NASA Facilities Entrance" && e->GetDirection() == "north") {
 					cout << "The barrier is closed. The soldier is asking for your ID Card so he can verify your identity.\n---------------------------------------------------------" << endl;
 				}
-				else {
-					//TODO: Implement quantum computer key access
+				else if(location->name == "Main Hall" && e->GetDirection() == "north") {
+					cout << "This door is locked. It's weird, the lock seems to be made out of gold. Something really valuable must be stored here." << endl;
 				}
 			}
 			else {
@@ -66,7 +69,8 @@ void Player::Take(string itemName) {
 		return;
 	}
 	for (Entity* e : itemsInTheRoom) {
-		if (e->name == Utils::ToLower(itemName)) {
+		Item* item = (Item*)e;
+		if (item->name == Utils::ToLower(itemName) && item->itemType != ItemType::HOLDER ) {
 			this->Add(e);
 			e->SetParent(this);
 			location->Remove(e);
@@ -131,6 +135,15 @@ void Player::Inspect(string entityName) {
 		if (entityToInspect->type == EntityType::ITEM) {
 			Item* item = (Item*)entityToInspect;
 			UI::DisplayAscii(item->asciiArt);
+			// Custom inspect case to adapt the storyline
+			if (item->name == "locker") {
+				Item* key = (Item*)item->GetChildByName("key");
+				location->Add(key);
+				item->container.remove(key);
+				cout << "You opened the locker and a golden key dropped to the floor. Maybe you should TAKE it." << endl;
+				cout << "---------------------------------------------------------" << endl;
+				return;
+			}
 		}
 		cout << Utils::ToUpper(entityToInspect->name) << ": " << entityToInspect->description << endl;
 	}
@@ -142,7 +155,7 @@ void Player::Inspect(string entityName) {
 
 void Player::Use(string itemName) {
 	Entity* itemToUse = GetChildByName(Utils::ToLower(itemName));
-	//TODO: I wish I had more time so I could refactor this hadoken-spaghetti code.
+	//TODO: I wish I had more time so I could refactor this hadoken code.
 	if (itemToUse != nullptr) {
 		// Unlock Facilites entrance door with ID Card.
 		if (itemToUse->name == "id") {
@@ -156,6 +169,7 @@ void Player::Use(string itemName) {
 				}
 			}
 		}
+		// Get hubble telescope door code from the Laptop
 		else if (itemToUse->name == "laptop") {
 			cout << "You boot the computer and check your email inbox.\nYou have an email from the NASA Chief Scientist. \nYou start reading and...\nWTF*CK!!!\n\"The planet earth is at risk! Accoording to the predictions, some large asteroids are approaching to our planet!\"\nIn the mail, the NASA Chief Scientist sent you a CODE, so you can access the Hubble telescope room and then investigate what is really happening.\nYou note the CODE on a paper, put it on your pocket, and poweroff the computer." << endl;
 			//TODO: Add ascii art with the code.
@@ -166,6 +180,19 @@ void Player::Use(string itemName) {
 			this->Inspect("map");
 		} else if(itemToUse->name == "code"){
 			cout << "You can't use the CODE. Maybe you should try inspecting..." << endl;
+		}
+		else if (itemToUse->name == "telescope") {
+			cout << "OHH NOOO! This is much worse than expected, You've no choice but RUN AWAYYYY. Try to find a way out of the PLANET EARTH!" << endl;
+		} else if (itemToUse->name == "key") {
+			if (location->name == "Main Hall") {
+				vector<Exit*> exitsInLocation = location->GetExits();
+				for (Exit* e : exitsInLocation) {
+					if (e->GetDirection() == "north") {
+						e->UnLock();
+						cout << "Nice, you've UNLOCKED the door! You've still a chance to survive." << endl;
+					}
+				}
+			}
 		}
 	}
 	else {

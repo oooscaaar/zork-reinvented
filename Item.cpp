@@ -1,5 +1,7 @@
 #include "item.h"
 
-Item::Item(const char* name, const char* description, vector<string> asciiArt, Entity* parent) : Entity(EntityType::ITEM, name, description) {
+Item::Item(string name, string description, vector<string> asciiArt, ItemType itemType, Entity* parent) : Entity(EntityType::ITEM, name, description) {
 	this->asciiArt = asciiArt;
+	this -> parent = parent;
+	this->itemType = itemType;
 }

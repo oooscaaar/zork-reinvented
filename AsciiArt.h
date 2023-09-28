@@ -10,6 +10,7 @@ public:
 	static vector<string> facilitiesEntrance;
 	static vector<string> playersOffice;
 	static vector<string> hubbleTelescopeRoom;
+	static vector<string> telescope;
 	static vector<string> hall;
 	static vector<string> map;
 	static vector<string> flag;
@@ -17,5 +18,7 @@ public:
 	static vector<string> code;
 	static vector<string> accessCodeTerminal;
 	static vector<string> about;
+	static vector<string> spaceShip;
+	static vector<string> finalScene;
 };
 

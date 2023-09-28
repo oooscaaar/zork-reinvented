@@ -12,6 +12,7 @@ public:
 	static void DisplayIntro();
 	static void DisplayHelp();
 	static void DisplayAbout();
+	static void DisplayEnd();
 	static void DisplayAscii(vector<string> asciiArt);
 };
 
