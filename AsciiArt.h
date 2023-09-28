@@ -14,5 +14,6 @@ public:
 	static vector<string> map;
 	static vector<string> flag;
 	static vector<string> laptop;
+	static vector<string> code;
 };
 

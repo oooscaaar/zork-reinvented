@@ -138,7 +138,15 @@ void Player::Use(string itemName) {
 			}
 		}
 		else if (itemToUse->name == "laptop") {
-			
+			cout << "You boot the computer and check your email inbox.\nYou have an email from the NASA Chief Scientist. \nYou start reading and...\nWTF*CK!!!\n\"The planet earth is at risk! Accoording to the predictions, some large asteroids are approaching to our planet!\"\nIn the mail, the NASA Chief Scientist sent you a CODE, so you can access the Hubble telescope room and then investigate what is really happening.\nYou note the CODE on a paper, put it on your pocket, and poweroff the computer." << endl;
+			//TODO: Add ascii art with the code.
+			Item* code = new Item("code", "Secret access code to the hubble telescope room.", AsciiArt::code);
+			this->Add(code);
+		}
+		else if (itemToUse->name == "map") {
+			this->Inspect("map");
+		} else if(itemToUse->name == "code"){
+			cout << "You can't use the CODE. Maybe you should try inspecting..." << endl;
 		}
 	}
 	else {

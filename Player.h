@@ -4,6 +4,7 @@
 #include "UI.h"
 #include "Item.h"
 #include "Utils.h"
+#include "AsciiArt.h"
 #include <vector>
 #include<iostream>
 
