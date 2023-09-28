@@ -11,22 +11,22 @@ At the beginning of the game, Type HELP to display a list of available commands 
 If you just want to advance the fastest possible and lose a lot of juice, just use the following sequence of commands:
 
 -- START GAME --
-> Type your player's name when asked\
-> USE ID\
-> GO NORTH\
-> GO EAST\
-> TAKE LAPTOP\
-> USE LAPTOP\
-> GO WEST\
-> GO WEST\
-> Type 1234 when asked for the code\
-> INSPECT LOCKER\
-> TAKE KEY\
-> GO EAST\
-> GO NORTH\
-> USE KEY\
-> GO NORTH\
-> TAKE OFF\
+Type your player's name when asked\
+USE ID\
+GO NORTH\
+GO EAST\
+TAKE LAPTOP\
+USE LAPTOP\
+GO WEST\
+GO WEST\
+Type 1234 when asked for the code\
+INSPECT LOCKER\
+TAKE KEY\
+GO EAST\
+GO NORTH\
+USE KEY\
+GO NORTH\
+TAKE OFF\
 -- END GAME --
 \
 \
