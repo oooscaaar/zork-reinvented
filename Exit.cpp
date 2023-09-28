@@ -23,3 +23,15 @@ Room* Exit::GetDestination() {
 string Exit::GetOnCrossedMessage() {
 	return this->onCrossedMessage;
 }
+
+bool Exit::IsLocked() {
+	return this->isLocked;
+}
+
+void Exit::UnLock() {
+	this->isLocked = false;
+}
+
+void Exit::Lock() {
+	this->isLocked = true;
+}

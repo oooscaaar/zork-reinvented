@@ -23,7 +23,7 @@ World::World() {
 	Room* playersOffice = new Room("Your Office", "This is your humble office. It's equiped with a COMPUTER, a desk and a huge american FLAG on the wall.", AsciiArt::playersOffice);
 
 	// Exits
-	Exit* entranceToHall = new Exit("Entrance to the Space Center", "Access to the main hall.", DirectionType::NORTH, facilitiesEntrance, hall, "The guard lets you access the building. You are in the main hall. It's quite a big building.");
+	Exit* entranceToHall = new Exit("Entrance to the Space Center", "Access to the main hall.", DirectionType::NORTH, facilitiesEntrance, hall, "The guard lets you access the building. You are in the main hall. It's quite a big building.", true);
 	Exit* hallToEntrance = new Exit("South Door", "Exit from the building.", DirectionType::SOUTH, hall, facilitiesEntrance, "");
 	Exit* hallToQuantumComputerRoom = new Exit("North Door", "Obviously, this door is closed with a security key", DirectionType::NORTH, hall, quantumComputerRoom, "");
 	Exit* quantumComputerRoomToHall = new Exit("South Door", "Return to the main hall", DirectionType::SOUTH, quantumComputerRoom, hall, "");
@@ -149,8 +149,8 @@ void World::HandleUserInput(vector<string> commands) {
 		else if (commands[0] == "drop") {
 			player->Drop(commands[1]); break;
 		}
-		else {
-			cout << "You don\'t have a " << "\"" << commands[1] << "\"" << endl;
+		else if (commands[0] == "look") {
+			cout << "Use INSPECT to gather more information about items in your inventory" << endl;
 			break;
 		}
 

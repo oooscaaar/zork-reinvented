@@ -26,12 +26,16 @@ string Player::getLocationName() {
 void Player::Go(string direction) {
 	vector<Exit*> exitsInRoom = location->GetExits();
 	for (Exit* e : exitsInRoom) {
-		if (e->GetDirection() == direction) {
-			//TODO: Add locked door mechanic (Check if door is locked, and If so, check player inventory and output a message accordingly.
-			this->location = e->GetDestination();
-			UI::DisplayAscii(location->asciiArt);
-			cout << e->GetOnCrossedMessage() << endl;
-			cout << "\n---------------------------------------------------------" << endl;
+		if (Utils::ToLower(e->GetDirection()) == Utils::ToLower(direction)) {
+			if (e->IsLocked()) {
+				cout << "This door is locked. You'll need to find a way to open it.\n---------------------------------------------------------" << endl;
+			}
+			else {
+				this->location = e->GetDestination();
+				UI::DisplayAscii(location->asciiArt);
+				cout << e->GetOnCrossedMessage() << endl;
+				cout << "\n---------------------------------------------------------" << endl;
+			}
 		}
 	}
 }
@@ -117,9 +121,16 @@ void Player::Use(string itemName) {
 	Entity* itemToUse = GetChildByName(Utils::ToLower(itemName));
 	//TODO: I wish I had more time so I could refactor this hadoken-spaghetti code.
 	if (itemToUse != nullptr) {
+		// Unlock Facilites entrance door with ID Card.
 		if (itemToUse->name == "id") {
 			if (location->name == "NASA Facilities Entrance") {
-				
+				vector<Exit*> exitsInLocation = location->GetExits();
+				for (Exit* e : exitsInLocation) {
+					if (e->GetDirection() == "north") {
+						e->UnLock();
+						cout << "Nice! now you can go ahead!" << endl;
+					}
+				}
 			}
 		}
 	}
