@@ -1,7 +1,5 @@
 #include "Player.h"
 
-using namespace std;
-
 void Player::DisplayInventory() {
 	cout << "// INVENTORY\n";
 
@@ -28,7 +26,24 @@ void Player::Go(string direction) {
 	for (Exit* e : exitsInRoom) {
 		if (Utils::ToLower(e->GetDirection()) == Utils::ToLower(direction)) {
 			if (e->IsLocked()) {
-				cout << "This door is locked. You'll need to find a way to open it.\n---------------------------------------------------------" << endl;
+				if (location->name == "Main Hall" && e->GetDirection() == "west") {
+					UI::DisplayAscii(AsciiArt::accessCodeTerminal);
+					cout << "ACCESS RESTRICTED - Please insert code:\n> ";
+					string code;
+					while (code.empty()) {
+						getline(cin >> ws, code);
+					}
+					if (code == "1234") {
+						e->UnLock();
+						cout << "Nice! now you can go ahead!" << endl;
+					}
+					else {
+						cout << "Nice try, but... INCORRECT CODE!\n---------------------------------------------------------" << endl;
+					}
+				}
+				else {
+					cout << "This door is locked. You'll need to find a way to open it.\n---------------------------------------------------------" << endl;
+				}
 			}
 			else {
 				this->location = e->GetDestination();

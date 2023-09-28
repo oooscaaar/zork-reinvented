@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include "AsciiArt.h"
 #include <vector>
 
 using namespace std;

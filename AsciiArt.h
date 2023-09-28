@@ -15,5 +15,7 @@ public:
 	static vector<string> flag;
 	static vector<string> laptop;
 	static vector<string> code;
+	static vector<string> accessCodeTerminal;
+	static vector<string> about;
 };
 

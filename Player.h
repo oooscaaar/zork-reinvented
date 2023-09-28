@@ -6,6 +6,7 @@
 #include "Utils.h"
 #include "AsciiArt.h"
 #include <vector>
+#include <cstdio>
 #include<iostream>
 
 using namespace std;

@@ -15,16 +15,12 @@ int main() {
 	World world;
 	Player* player = (Player*)world.FindEntityByType(EntityType::PLAYER);
 
-	UI::DisplayAscii(AsciiArt::facilitiesEntrance);
-	cout << "Welcome to the NASA facilities, eager aerospace engineer.\nYou work here.\nThere is a soldier guarding the entrance.\n\n---------------------------------------------------------" << endl;
-	
-	cout << "The soldier asks for your name : ";
-	string playerName;
+	UI::DisplayIntro();
 
+	string playerName;
 	while (playerName.empty()) {
 		getline(cin >> ws, playerName);
 	}
-
 	player->SetName(playerName);
 
 	cout << "---------------------------------------------------------" << endl;
