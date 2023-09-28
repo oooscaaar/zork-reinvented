@@ -27,9 +27,8 @@ void Player::Go(string direction) {
 	vector<Exit*> exitsInRoom = location->GetExits();
 	for (Exit* e : exitsInRoom) {
 		if (e->GetDirection() == direction) {
-			//TODO: Add locked door mechanic (CHeck if door is locked, and If so, check player inventory and output a message accordingly.
+			//TODO: Add locked door mechanic (Check if door is locked, and If so, check player inventory and output a message accordingly.
 			this->location = e->GetDestination();
-			//TODO: Handle story messages
 			UI::DisplayAscii(location->asciiArt);
 			cout << e->GetOnCrossedMessage() << endl;
 			cout << "\n---------------------------------------------------------" << endl;
@@ -115,5 +114,14 @@ void Player::Inspect(string entityName) {
 }
 
 void Player::Use(string itemName) {
-	//TODO: Implementation;
+	Entity* itemToUse = GetChildByName(Utils::ToLower(itemName));
+	if (itemToUse != nullptr) {
+		if (itemToUse->name == "id") {
+			
+		}
+	}
+	else {
+		cout << "There is no such item in your inventory." << endl;
+	}
+	cout << "---------------------------------------------------------" << endl;
 }

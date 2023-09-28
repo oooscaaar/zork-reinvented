@@ -29,6 +29,6 @@ public:
     void Drop(string itemName);
     void Look();
     void Inspect(string entityName);
-
+    void Use(string itemName);
 };
 
