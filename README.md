@@ -3,7 +3,8 @@ Text-based Adventure Game.\
 Zork-like game in C++.\
 Technical Assessment for [UPC Master's Degree of Continuing Education in Advanced Programming for AAA Video Games](https://www.talent.upc.edu/ing/estudis/formacio/curs/201200/master-degree-advanced-programming-aaa-video-games/)\
 ![img1](https://github.com/oooscaaar/zork-reinvented/assets/16454493/6a7740ca-304b-413f-b711-3afda651daa3)
-![img2](https://github.com/oooscaaar/zork-reinvented/assets/16454493/890ec981-ec7e-499a-9c3e-d5a7e633a04d)
+![img2](https://github.com/oooscaaar/zork-reinvented/assets/16454493/890ec981-ec7e-499a-9c3e-d5a7e633a04d)![img3](https://github.com/oooscaaar/zork-reinvented/assets/16454493/10463665-8f2b-43bf-b7b0-1a8fd7bbfad1)
+
 
 If you want to try the game, just download the zip file containing the executable (from the repository Release section), and enjoy!\
 At the beginning of the game, Type HELP to display a list of available commands so you are aware of every funny detail ;)
