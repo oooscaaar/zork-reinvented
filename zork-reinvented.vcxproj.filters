@@ -9,10 +9,10 @@
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="AsciiArt.cpp" />
+    <ClCompile Include="NPC.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -25,9 +25,9 @@
     <ClInclude Include="Room.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="NPC.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="AsciiArt.h" />
+    <ClInclude Include="NPC.h" />
   </ItemGroup>
 </Project>

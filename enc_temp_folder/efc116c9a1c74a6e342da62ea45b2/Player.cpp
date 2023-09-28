@@ -113,7 +113,3 @@ void Player::Inspect(string entityName) {
 	}
 	cout << "---------------------------------------------------------" << endl;
 }
-
-void Player::Use(string itemName) {
-	//TODO: Implementation;
-}

@@ -14,18 +14,21 @@ class Exit :
 	public Entity
 {
 public:
-	Exit(string name, string description, DirectionType direction, Room* source, Room* destination) : Entity(EntityType::EXIT, name, description) {
+	Exit(string name, string description, DirectionType direction, Room* source, Room* destination, string onCrossedMessage) : Entity(EntityType::EXIT, name, description) {
 		this->direction = direction;
 		this->source = source;
 		this->destination = destination;
+		this->onCrossedMessage = onCrossedMessage;
 	}
 
 	string GetDirection();
+	string GetOnCrossedMessage();
 	Room* GetDestination();
 
 private:
 	DirectionType direction;
 	Room* source;
 	Room* destination;
+	string onCrossedMessage;
 };
 

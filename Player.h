@@ -3,6 +3,8 @@
 #include "Exit.h"
 #include "UI.h"
 #include "Item.h"
+#include "Utils.h"
+#include <vector>
 #include<iostream>
 
 using namespace std;

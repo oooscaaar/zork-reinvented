@@ -43,9 +43,11 @@ void UI::DisplayAbout() {
 }
 
 void UI::DisplayAscii(vector<string> asciiArt) {
+	cout << "\n";
 	for (string line : asciiArt) {
 		cout << line << endl;
 	}
+	cout << "\n";
 }
 
 

@@ -19,3 +19,7 @@ string Exit::GetDirection() {
 Room* Exit::GetDestination() {
 	return destination;
 }
+
+string Exit::GetOnCrossedMessage() {
+	return this->onCrossedMessage;
+}
