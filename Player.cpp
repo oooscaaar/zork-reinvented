@@ -150,7 +150,7 @@ void Player::Inspect(string entityName) {
 				return;
 			}
 		}
-		cout << Utils::ToUpper(entityToInspect->name) << ": " << entityToInspect->description << endl;
+		cout << entityToInspect->description << endl;
 	}
 	else {
 		cout << "There is no " << Utils::ToUpper(entityName) << " around." << endl;

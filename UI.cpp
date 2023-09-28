@@ -3,8 +3,8 @@
 
 void UI::DisplayIntro() {
 	DisplayAscii(AsciiArt::facilitiesEntrance);
-	cout << "Welcome to the NASA facilities, eager aerospace engineer.\nYou work here.\nThere is a soldier guarding the entrance.\n\n---------------------------------------------------------" << endl;
-	cout << "The soldier asks for your name : ";
+	cout << "Welcome to the NASA facilities, eager aerospace engineer.\nYou work here.\nThere is a guard controlling the access at the entrance.\n\n---------------------------------------------------------" << endl;
+	cout << "You stop the car by the guard house, and the guard, dressed with\na military uniform asks for your name: ";
 }
 
 void UI::DisplayHelp() {

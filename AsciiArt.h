@@ -21,5 +21,7 @@ public:
 	static vector<string> about;
 	static vector<string> spaceShip;
 	static vector<string> finalScene;
+	static vector<string> key;
+	static vector<string> id;
 };
 

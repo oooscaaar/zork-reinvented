@@ -23,7 +23,7 @@ World::World() {
 	Room* playersOffice = new Room("Your Office", "This is your humble office. It's equiped with a COMPUTER, a desk and a huge american FLAG on the wall.", AsciiArt::playersOffice);
 
 	// Exits
-	Exit* entranceToHall = new Exit("Entrance to the Space Center (North)", "Access to the main hall.", DirectionType::NORTH, facilitiesEntrance, hall, "The guard lets you access the building, and you're now in the main hall. It's quite a big building.", true);
+	Exit* entranceToHall = new Exit("Entrance to the Space Center (North)", "Access to the main hall.", DirectionType::NORTH, facilitiesEntrance, hall, "The guard lets you access the building, and you're now in\nthe main hall. It's quite a big building.", true);
 	Exit* hallToEntrance = new Exit("South Door", "Exit from the building.", DirectionType::SOUTH, hall, facilitiesEntrance, "You left the building, maybe you should go back and... WORK!");
 	Exit* hallToEmergencySpaceshipRoom = new Exit("North Door", "Obviously, this door is closed with a security key", DirectionType::NORTH, hall, emergencySpaceshipRoom, "You enter the room and contemplate a huge spaceship ready to take off. Hurry up, there's no much time left!", true);
 	Exit* emergencySpaceshipRoomToHall = new Exit("South Door", "Return to the main hall", DirectionType::SOUTH, emergencySpaceshipRoom, hall, "");
@@ -35,12 +35,12 @@ World::World() {
 
 	// Items
 	Item* map = new Item("map", "Map of the building", AsciiArt::map);
-	Item* idCard = new Item("id", "Even if you look like a terrorist on that photo, this is your NFC ID card.", AsciiArt::map);
+	Item* idCard = new Item("id", "Even if you look like an alien on that photo, this is your NFC ID card.", AsciiArt::id);
 	Item* telescope = new Item("telescope", "The Hubble telescope is amazing. Now you know why it was several decades in the making.", AsciiArt::telescope);
 	Item* laptop = new Item("laptop", "That is your computer. Maybe you should start the work day checking your email inbox...", AsciiArt::laptop);
 	Item* flag = new Item("flag", "That's your huge and beloved American Flag on the wall.", AsciiArt::flag);
 	Item* locker = new Item("locker", "This locker is marked for emergencies. Maybe you should take a look inside.", AsciiArt::locker, ItemType::HOLDER);
-	Item* key = new Item("key", "This key opens the emergency spaceship takeoff platform", AsciiArt::map, ItemType::KEY);
+	Item* key = new Item("key", "This key opens the emergency spaceship takeoff platform", AsciiArt::key, ItemType::KEY);
 	Item* spaceShip = new Item("spaceship", "This ship will take you really far from here. It looks blazingly FAST!", AsciiArt::spaceShip);
 
 	// Player

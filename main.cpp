@@ -24,7 +24,7 @@ int main() {
 	player->SetName(playerName);
 
 	cout << "---------------------------------------------------------" << endl;
-	cout << "SOLDIER: Ok " << player->name << ", to let you pass, first I need to verify your NASA unique ultra secret ID." << endl;
+	cout << "SOLDIER: Hello " << player->name << ", to let you pass, first I need to verify your NASA unique ultra secret ID." << endl;
 	cout << "\n[hint] Type HELP to get a list of available commands.\n";
 	cout << "---------------------------------------------------------" << endl;
 
