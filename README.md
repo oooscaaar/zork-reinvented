@@ -1,17 +1,33 @@
 # Zork Reinvented
-
 Text-based Adventure Game.\
-Zork clone in C++.\
-Technical Assessment for [UPC Master's Degree of Continuing Education in Advanced Programming for AAA Video Games](https://www.talent.upc.edu/ing/estudis/formacio/curs/201200/master-degree-advanced-programming-aaa-video-games/)
-TODO:
-[ ] Player location and movement
-[ ] Use items
-[ ] Add exits to map
-[ ] Add locks to doors
-[ ] Handle game state
-[ ] Huge refactor
-[ ] Add drop method to player (Don't use Remove Entity)
+Zork-like game in C++.\
+Technical Assessment for [UPC Master's Degree of Continuing Education in Advanced Programming for AAA Video Games](https://www.talent.upc.edu/ing/estudis/formacio/curs/201200/master-degree-advanced-programming-aaa-video-games/)\
+![img1](https://github.com/oooscaaar/zork-reinvented/assets/16454493/6a7740ca-304b-413f-b711-3afda651daa3)
+![img2](https://github.com/oooscaaar/zork-reinvented/assets/16454493/890ec981-ec7e-499a-9c3e-d5a7e633a04d)
 
+If you want to try the game, just download the zip file containing the executable (from the repository Release section), and enjoy!\
+At the beginning of the game, Type HELP to display a list of available commands so you are aware of every funny detail ;)
+
+If you just want to advance the fastest possible and lose a lot of juice, just use the following sequence of commands:
+
+-- START GAME --
+> Type your player's name when asked\
+> USE ID\
+> GO NORTH\
+> GO EAST\
+> TAKE LAPTOP\
+> USE LAPTOP\
+> GO WEST\
+> GO WEST\
+> Type 1234 when asked for the code\
+> INSPECT LOCKER\
+> TAKE KEY\
+> GO EAST\
+> GO NORTH\
+> USE KEY\
+> GO NORTH\
+> TAKE OFF\
+-- END GAME --
 \
 \
 Author: Óscar M.\
