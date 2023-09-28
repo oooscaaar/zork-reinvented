@@ -29,9 +29,17 @@ vector<string> Utils::TrimUserInput(string input) {
 
 	return loweredInputs;
 }
+
 string Utils::ToLower(string input) {
 	std::transform(input.begin(), input.end(), input.begin(), [&](unsigned char input) {
 		return std::tolower(input);
+		});
+	return input;
+}
+
+string Utils::ToUpper(string input) {
+	std::transform(input.begin(), input.end(), input.begin(), [&](unsigned char input) {
+		return std::toupper(input);
 		});
 	return input;
 }

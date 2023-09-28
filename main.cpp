@@ -36,7 +36,7 @@ int main() {
 	Player* player = (Player*)world.FindEntityByType(EntityType::PLAYER);
 
 	UI::DisplayAscii(AsciiArt::hubbleTelescopeRoom);
-	cout << "\nWelcome to the NASA facilities, eager aerospace engineer.\nYou work here.\nThere is a soldier guarding the entrance.\nThe soldier asks for your name: " << endl;
+	cout << "\nWelcome to the NASA facilities, eager aerospace engineer.\nYou work here.\nThere is a soldier guarding the entrance.\nThe soldier asks for your name: ";
 	
 	string playerName;
 
@@ -46,13 +46,17 @@ int main() {
 
 	player->SetName(playerName);
 
-	cout << "\nSOLDIER: Ok " << player->name << ", to let you pass, first I need to verify your NASA unique ultra secret credential." << endl;
-	cout << "[hint] Type HELP to get a list of available commands.\n";
+	cout << "---------------------------------------------------------" << endl;
+	cout << "SOLDIER: Ok " << player->name << ", to let you pass, first I need to verify your NASA unique ultra secret credential." << endl;
+	cout << "\n[hint] Type HELP to get a list of available commands.\n";
+	cout << "---------------------------------------------------------" << endl;
 
 	// Handle user input
 	string input;
 	while (world.GetGameState() != GameState::GAMEOVER) {
+		cout << "> ";
 		getline(cin >> ws, input);
+		cout << "---------------------------------------------------------" << endl;
 		vector<string> commands = Utils::TrimUserInput(input);
 		world.HandleUserInput(commands);
 	}

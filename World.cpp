@@ -34,8 +34,8 @@ World::World() {
 
 
 	// Items
-	Item* map = new Item("MAP", "Map of the building");
-	Item* idCard = new Item("ID", "Even if you look like a terrorist on that photo, this is your NFC ID card.");
+	Item* map = new Item("map", "Map of the building");
+	Item* idCard = new Item("id", "Even if you look like a terrorist on that photo, this is your NFC ID card.");
 
 	// Player
 	player = new Player("John Doe", "You're a 47 years old Aerospace engineer", facilitiesEntrance);
@@ -47,7 +47,7 @@ World::World() {
 	entities.push_back(playersOffice);
 	entities.push_back(map);
 	entities.push_back(player);
-	
+
 	// Forced to add these two to the world due to an improper "FindEntities" implementation. I'd have probably done different with more time.
 	entities.push_back(map);
 	entities.push_back(idCard);
@@ -118,56 +118,57 @@ void World::HandleUserInput(vector<string> commands) {
 		else if (commands[0] == "inventory") {
 			player->DisplayInventory();
 		}
+		else if (commands[0] == "look") {
+			player->Look();
+			break;
+		}
 		// Just for debugging
 		else if (commands[0] == "whereami") {
 			cout << "You're in " << player->getLocationName() << endl;
 		}
 		else {
 			//TODO: Randomize unsupported command messages.
-			cout << "Sorry but I don't understand what you mean.\nType HELP to get a list of available commands." << endl;
+			cout << "Sorry but I don't understand what you mean.\nType HELP to get a list of available commands.\n";
+			cout << "---------------------------------------------------------" << endl;
 		}
 		break;
 	}
 	case 2:
 	{
 		if (commands[0] == "inspect") { break; }
-		if (commands[0] == "use") { break; }
-		if (commands[0] == "take") {
-			Entity* entityToTake = FindEntityByName(commands[1]);
-			if (entityToTake->GetParent() == player->location) {
-				player->Add(entityToTake);
-			}
+		else if (commands[0] == "use") { break; }
+		else if (commands[0] == "take") {
+			player->Take(commands[1]);
 			break;
 		}
-		if (commands[0] == "go") { player->Go(commands[1]); break; }
-		if (commands[0] == "drop") {
-			Entity* entityToDrop = FindEntityByName(commands[1]);
-			if ( entityToDrop != NULL) {
-				player->Remove(entityToDrop);
-				cout << "You dropped the " << "\"" << entityToDrop->name << "\"" << endl;
-			}
-			else {
-				cout << "You don\'t have an " << "\"" << commands[1] << "\"" << endl;
-			}
-			break;
+		else if (commands[0] == "go") { player->Go(commands[1]); break; }
+		else if (commands[0] == "drop") {
+			player->Drop(commands[1]); break;
 		}
-		
+		else {
+			cout << "You don\'t have an " << "\"" << commands[1] << "\"" << endl;
+		}
+
 		//TODO: Randomize unsupported command messages.
-		cout << "Sorry but I don't understand what you mean." << endl;
+		cout << "Sorry but I don't understand what you mean.\n";
+		cout << "---------------------------------------------------------" << endl;
 		break;
 	}
 
 	case 4:
 	{
 		if (commands[0] == "i" && commands[1] == "need" && commands[2] == "a" && commands[3] == "hero") {
-			cout << "This command should display a hint." << endl;
+			//TODO
+			cout << "This command should display a hint.";
+			cout << "---------------------------------------------------------" << endl;
 		}
 		break;
 	}
 
 	default: {
 		//TODO: Randomize unsupported command messages.
-		cout << "Sorry but I don't understand what you mean." << endl;
+		cout << "Sorry but I don't understand what you mean.\n";
+		cout << "---------------------------------------------------------" << endl;
 	}
 	}
 

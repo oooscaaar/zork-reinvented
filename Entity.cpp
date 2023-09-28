@@ -31,8 +31,28 @@ void Entity::Remove(Entity* entity) {
 	container.remove(entity);
 }
 
+//TODO: Refactor to return a vector of entities.
 list<Entity*> Entity::GetChildren() const {
 	return container;
+}
+
+Entity* Entity::GetChildByName(string childName) {
+	for (Entity* child : container) {
+		if (Utils::ToLower(child->name) == childName) {
+			return child;
+		}
+	}
+	return nullptr;
+}
+
+vector<Entity*> Entity::GetChildrenByType(EntityType entityType) {
+	vector<Entity*> filteredEntities;
+	for (Entity* e : container) {
+		if (e->type == entityType) {
+			filteredEntities.push_back(e);
+		}
+	}
+	return filteredEntities;
 }
 
 Entity* Entity::GetParent() const {

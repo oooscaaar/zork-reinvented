@@ -20,11 +20,11 @@ void UI::DisplayIntro() {
 }
 
 void UI::DisplayHelp() {
-	cout << "\n--- AVAILABLE COMMANDS ---\nINVENTORY\nLOOK\nINSPECT [OBJECT]\nUSE [OBJECT]\nTAKE [OBJECT]\nDROP [OBJECT]\nGO [DIRECTION]\nI NEED A HERO\nABOUT\nHELP\n-------------------------" << endl;
+	cout << "//AVAILABLE COMMANDS\nINVENTORY\nLOOK\nINSPECT [OBJECT]\nUSE [OBJECT]\nTAKE [OBJECT]\nDROP [OBJECT]\nGO [DIRECTION]\nI NEED A HERO\nABOUT\nHELP\n---------------------------------------------------------" << endl;
 }
 
 void UI::DisplayAbout() {
-	cout << "\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n";
+	cout << "* * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n";
 	cout << "* @author: Oscar Mellado                                *\n";
 	cout << "* @date: September 2023                                 *\n";
 	cout << "* @context: Advanced programming for AAA videogames     *\n";
@@ -38,7 +38,8 @@ void UI::DisplayAbout() {
 	cout << "*                      `'\";\\) `                         *\n";
 	cout << "*                        _/_Y                           *  \n";
 	cout << "*                                               1557798 *\n";
-	cout << "* * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n\n";
+	cout << "* * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n";
+	cout << "---------------------------------------------------------" << endl;
 }
 
 void UI::DisplayAscii(vector<string> asciiArt) {

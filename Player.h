@@ -2,6 +2,7 @@
 #include "Creature.h"
 #include "Exit.h"
 #include "UI.h"
+#include "Item.h"
 #include<iostream>
 
 using namespace std;
@@ -21,7 +22,11 @@ public:
 
     string getLocationName();
 
-    void Go(string& direction);
+    void Go(string direction);
+    void Take(string itemName);
+    void Drop(string itemName);
+    void Look();
+    void Inspect(string entityName);
 
 };
 
