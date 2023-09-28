@@ -60,10 +60,6 @@ void Player::Go(string direction) {
 				cout << "\n---------------------------------------------------------" << endl;
 			}
 		}
-		else {
-			cout << "There are no directions leading " << direction;
-			cout << "\n---------------------------------------------------------" << endl;
-		}
 	}
 }
 
@@ -145,7 +141,7 @@ void Player::Inspect(string entityName) {
 				Item* key = (Item*)item->GetChildByName("key");
 				location->Add(key);
 				item->container.remove(key);
-				cout << "You opened the locker and a golden key dropped to the floor. Maybe you should TAKE it." << endl;
+				cout << "You opened the locker and a GOLDEN KEY dropped to the floor.\nMaybe you should TAKE it." << endl;
 				cout << "---------------------------------------------------------" << endl;
 				return;
 			}
@@ -176,7 +172,7 @@ void Player::Use(string itemName) {
 		}
 		// Get hubble telescope door code from the Laptop
 		else if (itemToUse->name == "laptop") {
-			cout << "You boot the computer and check your email inbox.\nYou have an email from the NASA Chief Scientist. \nYou start reading and...\nWTF*CK!!!\n\"The planet earth is at risk! Accoording to the predictions, some large asteroids are approaching to our planet!\"\nIn the mail, the NASA Chief Scientist sent you a CODE, so you can access the Hubble telescope room and then investigate what is really happening.\nYou note the CODE on a paper, put it on your pocket, and poweroff the computer." << endl;
+			cout << "You boot the computer and check your email inbox.\nYou have an email from the NASA Chief Scientist. \nYou start reading and...\nWTF*CK!!!\n\"The planet earth is at risk! Accoording to the predictions,\nsome large asteroids are approaching to our planet!\"\nIn the mail, the NASA Chief Scientist sent you a CODE,\nso you can access the Hubble telescope room\nand then investigate what is really happening.\nYou note the CODE on a paper, put it on your pocket,\nand poweroff the computer." << endl;
 			//TODO: Add ascii art with the code.
 			Item* code = new Item("code", "Secret access code to the hubble telescope room.", AsciiArt::code);
 			this->Add(code);
@@ -187,14 +183,14 @@ void Player::Use(string itemName) {
 			cout << "You can't use the CODE. Maybe you should try inspecting..." << endl;
 		}
 		else if (itemToUse->name == "telescope") {
-			cout << "OHH NOOO! This is much worse than expected, You've no choice but RUN AWAYYYY. Try to find a way out of the PLANET EARTH!" << endl;
+			cout << "OHH NOOO! This is much worse than expected !!\nYou've no choice but RUN AWAYYYY.\nTry to find a way out of the PLANET EARTH!" << endl;
 		} else if (itemToUse->name == "key") {
 			if (location->name == "Main Hall") {
 				vector<Exit*> exitsInLocation = location->GetExits();
 				for (Exit* e : exitsInLocation) {
 					if (e->GetDirection() == "north") {
 						e->UnLock();
-						cout << "Nice, you've UNLOCKED the door! You've still a chance to survive." << endl;
+						cout << "Nice, you've UNLOCKED the door!\nYou've still a chance to survive." << endl;
 					}
 				}
 			}

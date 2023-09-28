@@ -6,12 +6,6 @@
 
 using namespace std;
 
-enum class GameState {
-	RUNNING,
-	WIN,
-	GAMEOVER
-};
-
 class World
 {
 public:
@@ -19,12 +13,12 @@ public:
 	~World();
 	Entity* FindEntityByName(string name);
 	Entity* FindEntityByType(EntityType type);
-	GameState GetGameState();
+	bool IsGameOver();
 	void HandleUserInput(vector<string>);
 
 private:
 	vector<Entity*> entities;
-	GameState gameState;
 	Player* player;
+	bool isGameOver;
 };
 
