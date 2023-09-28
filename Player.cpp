@@ -139,6 +139,9 @@ void Player::Inspect(string entityName) {
 			// Custom inspect case to adapt the storyline
 			if (item->name == "locker") {
 				Item* key = (Item*)item->GetChildByName("key");
+				if (key == NULL) {
+					return;
+				}
 				location->Add(key);
 				item->container.remove(key);
 				cout << "You opened the locker and a GOLDEN KEY dropped to the floor.\nMaybe you should TAKE it." << endl;
