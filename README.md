@@ -20,7 +20,7 @@ TAKE LAPTOP\
 USE LAPTOP\
 GO WEST\
 GO WEST\
-Type 1234 when asked for the code\
+Type '1234' when asked for the code\
 INSPECT LOCKER\
 TAKE KEY\
 GO EAST\
