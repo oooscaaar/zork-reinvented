@@ -8,7 +8,7 @@ void UI::DisplayIntro() {
 }
 
 void UI::DisplayHelp() {
-	cout << "//AVAILABLE COMMANDS\nINVENTORY\nLOOK\nINSPECT [OBJECT]\nUSE [OBJECT]\nTAKE [OBJECT]\nDROP [OBJECT]\nGO [DIRECTION]\nI NEED A HERO\nABOUT\nHELP\n---------------------------------------------------------" << endl;
+	cout << "//AVAILABLE COMMANDS\nINVENTORY\nLOOK AROUND\nINSPECT [OBJECT]\nUSE [OBJECT]\nTAKE [OBJECT]\nDROP [OBJECT]\nGO [DIRECTION]\nWHERE AM I\nABOUT\nHELP\n---------------------------------------------------------" << endl;
 }
 
 void UI::DisplayAbout() {

@@ -21,6 +21,7 @@ string Player::getLocationName() {
 	return location->name;
 }
 
+// I wrote really fragile code here (using entity names to trigger events) and delegating in the player class responsabilites that it shouldn't hold. This decision was make due to time constraints.
 void Player::Go(string direction) {
 	vector<Exit*> exitsInRoom = location->GetExits();
 	for (Exit* e : exitsInRoom) {
@@ -35,14 +36,17 @@ void Player::Go(string direction) {
 					}
 					if (code == "1234") {
 						e->UnLock();
-						cout << "Nice! now you can go ahead!" << endl;
+						cout << "Nice, you've UNLOCKED the door!" << endl;
 					}
 					else {
 						cout << "Nice try, but... INCORRECT CODE!\n---------------------------------------------------------" << endl;
 					}
 				}
+				else if (location->name == "NASA Facilities Entrance" && e->GetDirection() == "north") {
+					cout << "The barrier is closed. The soldier is asking for your ID Card so he can verify your identity.\n---------------------------------------------------------" << endl;
+				}
 				else {
-					cout << "This door is locked. You'll need to find a way to open it.\n---------------------------------------------------------" << endl;
+					//TODO: Implement quantum computer key access
 				}
 			}
 			else {
@@ -147,7 +151,7 @@ void Player::Use(string itemName) {
 				for (Exit* e : exitsInLocation) {
 					if (e->GetDirection() == "north") {
 						e->UnLock();
-						cout << "Nice! now you can go ahead!" << endl;
+						cout << "Thanks, " << this->name << ". You can go ahead. Have a nice working day!" << endl;
 					}
 				}
 			}

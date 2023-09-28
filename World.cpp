@@ -17,13 +17,13 @@ World::World() {
 
 	// Rooms
 	Room* facilitiesEntrance = new Room("NASA Facilities Entrance", "You are talking to a guard. He asks for an ID card in order to let you pass the security check and access to the NASA building. \n\nType HELP to get a list of available commands.", AsciiArt::facilitiesEntrance);
-	Room* hall = new Room("Main Hall", "The guard lets you access the building. You are in the main hall. It's quite a big building. Luckily you took a MAP so you can get to your office.", AsciiArt::hall);
+	Room* hall = new Room("Main Hall", "The guard lets you access the building, and you're now in the main hall. It's quite a big building.", AsciiArt::hall);
 	Room* hubbleTelescopeRoom = new Room("Hubble Telescope Room", "You mange to access the room. You see a huge TELESCOPE in the middle of the chamber.You are full of confidence, you can save the world.", AsciiArt::hubbleTelescopeRoom);
 	Room* quantumComputerRoom = new Room("Quantum Computer Room", "Let's crack some cyphered secrets", AsciiArt::facilitiesEntrance);
 	Room* playersOffice = new Room("Your Office", "This is your humble office. It's equiped with a COMPUTER, a desk and a huge american FLAG on the wall.", AsciiArt::playersOffice);
 
 	// Exits
-	Exit* entranceToHall = new Exit("Entrance to the Space Center (North)", "Access to the main hall.", DirectionType::NORTH, facilitiesEntrance, hall, "The guard lets you access the building. You are in the main hall. It's quite a big building.", true);
+	Exit* entranceToHall = new Exit("Entrance to the Space Center (North)", "Access to the main hall.", DirectionType::NORTH, facilitiesEntrance, hall, "The guard lets you access the building, and you're now in the main hall. It's quite a big building.", true);
 	Exit* hallToEntrance = new Exit("South Door", "Exit from the building.", DirectionType::SOUTH, hall, facilitiesEntrance, "");
 	Exit* hallToQuantumComputerRoom = new Exit("North Door", "Obviously, this door is closed with a security key", DirectionType::NORTH, hall, quantumComputerRoom, "", true);
 	Exit* quantumComputerRoomToHall = new Exit("South Door", "Return to the main hall", DirectionType::SOUTH, quantumComputerRoom, hall, "");
@@ -127,10 +127,6 @@ void World::HandleUserInput(vector<string> commands) {
 		else if (commands[0] == "inventory") {
 			player->DisplayInventory();
 		}
-		else if (commands[0] == "look") {
-			player->Look();
-			break;
-		}
 		else {
 			cout << "Sorry but I don't understand what you mean.\nType HELP to get a list of available commands.\n";
 			cout << "---------------------------------------------------------" << endl;
@@ -140,6 +136,10 @@ void World::HandleUserInput(vector<string> commands) {
 	case 2:
 	{
 		if (commands[0] == "inspect") { player->Inspect(commands[1]);break; }
+		else if(commands[0] == "look" && commands[1] == "around") {
+			player->Look();
+			break;
+		}
 		else if (commands[0] == "use") { player->Use(commands[1]); break; }
 		else if (commands[0] == "take") {
 			player->Take(commands[1]);
@@ -157,6 +157,14 @@ void World::HandleUserInput(vector<string> commands) {
 		cout << "Sorry but I don't understand what you mean.\n";
 		cout << "---------------------------------------------------------" << endl;
 		break;
+	}
+
+	case 3:
+	{
+		if (commands[0] == "where" && commands[1] == "am" && commands[2] == "i") {
+			cout << "You're in " << player->getLocationName() << "\n---------------------------------------------------------" << endl;
+			break;
+		}
 	}
 
 	default: {
