@@ -146,6 +146,12 @@ void World::HandleUserInput(vector<string> commands) {
 			break;
 		}
 		else if (commands[0] == "use") { player->Use(commands[1]); break; }
+		else if (commands[0] == "take" && commands[1] == "off") {
+			if (player->location->name == "Emergency Spaceship Room") {
+				UI::DisplayEnd();
+				break;
+			}
+		}
 		else if (commands[0] == "take") {
 			player->Take(commands[1]);
 			break;
@@ -153,13 +159,6 @@ void World::HandleUserInput(vector<string> commands) {
 		else if (commands[0] == "go") { player->Go(commands[1]); break; }
 		else if (commands[0] == "drop") {
 			player->Drop(commands[1]); break;
-		}
-		else if (commands[0] == "take" && commands[1] == "off") {
-			if (player->location->name == "Emergency Spaceship Room") {
-				UI::DisplayEnd();
-
-				break;
-			}
 		}
 		else if (commands[0] == "look") {
 			cout << "Use INSPECT to gather more information about items in your inventory" << endl;
