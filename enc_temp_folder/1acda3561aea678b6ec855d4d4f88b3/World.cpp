@@ -113,8 +113,8 @@ GameState World::GetGameState() {
 	return gameState;
 }
 
-// This handler should had been implemented using the command pattern. I wanted to refactor but I ran out of time :(
 void World::HandleUserInput(vector<string> commands) {
+
 	switch (commands.size()) {
 	case 1:
 	{
@@ -131,6 +131,10 @@ void World::HandleUserInput(vector<string> commands) {
 			player->Look();
 			break;
 		}
+		// Just for debugging
+		else if (commands[0] == "whereami") {
+			cout << "You're in " << player->getLocationName() << endl;
+		}
 		else {
 			cout << "Sorry but I don't understand what you mean.\nType HELP to get a list of available commands.\n";
 			cout << "---------------------------------------------------------" << endl;
@@ -140,7 +144,7 @@ void World::HandleUserInput(vector<string> commands) {
 	case 2:
 	{
 		if (commands[0] == "inspect") { player->Inspect(commands[1]);break; }
-		else if (commands[0] == "use") { player->Use(commands[1]); break; }
+		else if (commands[0] == "use") { break; }
 		else if (commands[0] == "take") {
 			player->Take(commands[1]);
 			break;
