@@ -115,9 +115,12 @@ void Player::Inspect(string entityName) {
 
 void Player::Use(string itemName) {
 	Entity* itemToUse = GetChildByName(Utils::ToLower(itemName));
+	//TODO: I wish I had more time so I could refactor this hadoken-spaghetti code.
 	if (itemToUse != nullptr) {
 		if (itemToUse->name == "id") {
-			
+			if (location->name == "NASA Facilities Entrance") {
+				
+			}
 		}
 	}
 	else {
