@@ -15,7 +15,6 @@ public:
 	static vector<string> map;
 	static vector<string> flag;
 	static vector<string> laptop;
-	static vector<string> locker;
 	static vector<string> code;
 	static vector<string> accessCodeTerminal;
 	static vector<string> about;

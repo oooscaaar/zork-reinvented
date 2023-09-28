@@ -39,7 +39,7 @@ World::World() {
 	Item* telescope = new Item("telescope", "The Hubble telescope is amazing. Now you know why it was several decades in the making.", AsciiArt::telescope);
 	Item* laptop = new Item("laptop", "That is your computer. Maybe you should start the work day checking your email inbox...", AsciiArt::laptop);
 	Item* flag = new Item("flag", "That's your huge and beloved American Flag on the wall.", AsciiArt::flag);
-	Item* locker = new Item("locker", "This locker is marked for emergencies. Maybe you should take a look inside.", AsciiArt::locker, ItemType::HOLDER);
+	Item* locker = new Item("locker", "This locker is marked for emergencies. Maybe you should take a look inside.", AsciiArt::map, ItemType::HOLDER);
 	Item* key = new Item("key", "This key opens the emergency spaceship takeoff platform", AsciiArt::map, ItemType::KEY);
 	Item* spaceShip = new Item("spaceship", "This ship will take you really far from here. It looks blazingly FAST!", AsciiArt::spaceShip);
 

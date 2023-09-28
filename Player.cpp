@@ -40,6 +40,7 @@ void Player::Go(string direction) {
 						UI::DisplayAscii(location->asciiArt);
 						cout << e->GetOnCrossedMessage() << endl;
 						cout << "\n---------------------------------------------------------" << endl;
+						return;
 					}
 					else {
 						cout << "Nice try, but... INCORRECT CODE!\n---------------------------------------------------------" << endl;
@@ -58,6 +59,10 @@ void Player::Go(string direction) {
 				cout << e->GetOnCrossedMessage() << endl;
 				cout << "\n---------------------------------------------------------" << endl;
 			}
+		}
+		else {
+			cout << "There are no directions leading " << direction;
+			cout << "\n---------------------------------------------------------" << endl;
 		}
 	}
 }
